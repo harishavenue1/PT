@@ -1,0 +1,45 @@
+LoadRunner FAQ
+What is LoadRunner?
+LoadRunner is a performance testing tool developed by Micro Focus. It is used to simulate real-world user load on applications and measure their performance under stress. LoadRunner can support a wide range of applications, technologies, and communication protocols.
+
+What are the different types of performance testing?
+LoadRunner can be used to conduct various types of performance testing, including:
+
+Load Testing: Simulating a realistic number of users accessing the application concurrently to assess its behavior under normal conditions.
+Stress Testing: Pushing the application beyond its normal load limits to identify its breaking point and how it recovers.
+Volume Testing: Evaluating the application's performance when dealing with large volumes of data.
+Endurance Testing: Examining the application's stability over extended periods of sustained load.
+Spike Testing: Determining how the application handles sudden, dramatic increases and decreases in user traffic.
+What are the main components of LoadRunner?
+LoadRunner consists of three primary components:
+
+Virtual User Generator (VuGen): Used for creating scripts that simulate user actions on the application.
+Controller: Responsible for managing and controlling the load test, including the number of virtual users, load distribution, and scenario execution.
+Analysis: Analyzes the performance test results and generates reports and graphs.
+What are actions in VuGen and what are the three default actions?
+Actions in VuGen are code blocks containing functions that simulate user interactions with the application. The three default actions are:
+
+vuser_init: Executed once at the beginning of the test, typically used for launching the application and logging in.
+action: Contains the main business process to be tested and is executed iteratively.
+vuser_end: Executed once at the end of the test, typically used for logging out of the application and cleaning up resources.
+What are transactions in VuGen and why are they important?
+Transactions in VuGen are used to group specific steps within the script to measure their performance individually. They are essential for:
+
+Isolating performance bottlenecks: By measuring the response time of individual transactions, you can pinpoint areas of the application that are causing performance issues.
+Setting performance goals: You can define service level agreements (SLAs) based on transaction response times to ensure the application meets performance expectations.
+What is the Solution Explorer in VuGen?
+The Solution Explorer provides a hierarchical view of the components within your VuGen script, including:
+
+Actions: Lists all the actions in the script (vuser_init, action, vuser_end, and any custom actions).
+Global.h: The header file for the script, containing declarations and definitions.
+Runtime Settings: Access to various settings controlling the script execution.
+Parameters: Used for data-driven testing, allowing you to vary input values.
+Reports: Provides access to recording and replay reports.
+What is the Step Navigator in VuGen?
+The Step Navigator lists all the functions used in your VuGen script and allows you to quickly jump to specific functions within the code. This is especially useful for navigating large and complex scripts.
+
+What are rendezvous points in LoadRunner?
+Rendezvous points are used to synchronize virtual users during a load test, forcing them to wait at a specific point in the script until a specified number of users arrive. This is helpful for simulating scenarios like:
+
+All users clicking a button simultaneously: This can help assess the application's ability to handle a sudden surge in requests.
+Simulating a flash sale: You can use a rendezvous point to have all users attempt to purchase a limited-quantity item at the same time, testing the application's inventory management and order processing capabilities.
